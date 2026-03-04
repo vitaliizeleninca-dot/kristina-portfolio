@@ -44,7 +44,7 @@ export function AboutSection() {
             <div className="mt-10 flex gap-10">
               {[
                 { value: "1", label: "Exhibitions" },
-                { value: "15+", label: "Artworks" },
+                { value: "17+", label: "Artworks" },
                 { value: "1", label: "Countries" },
               ].map((item) => (
                 <div key={item.label} className="text-center lg:text-left">
