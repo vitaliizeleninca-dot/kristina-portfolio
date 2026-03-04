@@ -39,11 +39,11 @@ export function Navbar({ animationDelay = 0 }: NavbarProps) {
       {/* Logo */}
       <div className="flex items-center gap-4 opacity-0 animate-fade-in-up ml-4 lg:ml-8" style={{ animationDelay: `${animationDelay}ms` }}>
        
-        <img src="/Кристина logo" alt="Kristina ;D" className="w-20 h-20 object-cover rounded-full border-2 border-[#B4935B]" />
+        <img src="/Kristina logo.png" alt="Kristina ;D" className="w-20 h-20 object-cover rounded-full border-2 border-[#B4935B]" />
         
         <div className="flex flex-col leading-tight">
           <span className="font-cinzel font-bold text-[#B4935B] text-2xl lg:text-3xl tracking-wide" style={{ textShadow: '0 2px 8px rgba(180,147,91,0.3)' }}>
-            Khrystyna
+            Kristina ;D
           </span>
           <span className="font-cinzel font-medium text-[#8B7355] text-xs tracking-[0.2em] uppercase italic -mt-0.5">
             AI Artist
