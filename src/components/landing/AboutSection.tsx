@@ -45,7 +45,7 @@ export function AboutSection() {
               {[
                 { value: "1", label: "Exhibitions" },
                 { value: "15+", label: "Artworks" },
-                { value: "", label: "Countries" },
+                { value: "1", label: "Countries" },
               ].map((item) => (
                 <div key={item.label} className="text-center lg:text-left">
                   <p className="font-playfair font-bold text-3xl text-[#B4935B]">
