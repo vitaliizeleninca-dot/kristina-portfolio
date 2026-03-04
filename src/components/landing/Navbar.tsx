@@ -115,7 +115,7 @@ export function Navbar({ animationDelay = 0 }: NavbarProps) {
             ))}
             <div className="flex flex-col gap-3 pt-4 border-t border-[#DBCBAA]/30">
               <button className="font-montserrat font-medium text-[#0A1A33] hover:text-[#B4935B] transition-colors py-2 text-left">
-                Login
+                <a href="https://webbiesocial.com/dashboard/aurumross" target="_blank">Webbie Social</a>
               </button>
               <button
                 className={cn(
@@ -124,7 +124,7 @@ export function Navbar({ animationDelay = 0 }: NavbarProps) {
                   "shadow-[0_2px_20px_rgba(180,147,91,0.4)]"
                 )}
               >
-                Get Started
+                <a href="https://x.com/aurumross" target="_blank">X (Twitter)</a>
               </button>
             </div>
           </div>
