@@ -3,31 +3,31 @@ import { Calendar, MapPin } from "lucide-react";
 
 const exhibitions = [
   {
-    title: "ICAM Geneva 2025",
-    venue: "International Conference on Art & Machine Intelligence",
-    location: "Geneva, Switzerland",
-    date: "September 2025",
-    status: "upcoming" as const,
+    title: "Digital Showcase",
+    venue: "Webbie Social: Creator Spotlight",
+    location: "Finland | Online",
+    date: "March 2026",
+    status: "current" as const,
     description:
-      "A major exhibition showcasing the convergence of human vision and machine intelligence, featuring new works from the AURUM collection.",
+      "Recognized for 17+ digital works showcasing a vibrant platform for artistic research and experimentation in contemporary AI-driven practices",
   },
   {
-    title: "Digital Horizons",
-    venue: "European Digital Art Forum",
-    location: "Berlin, Germany",
-    date: "March 2025",
-    status: "past" as const,
+    title: "Art Platform",
+    venue: "Aurum: Childhood in Art",
+    location: "Finland | Online",
+    date: "In Development",
+    status: "current" as const,
     description:
-      "Group exhibition exploring generative aesthetics and the role of AI in contemporary artistic practice.",
+      "An upcoming collaborative platform and research project dedicated to the intersection of contemporary art and the phenomenon of childhood",
   },
   {
-    title: "Neural Landscapes",
-    venue: "Gallery of Modern Digital Art",
-    location: "Vienna, Austria",
-    date: "November 2024",
-    status: "past" as const,
+    title: "International Open Calls",
+    venue: "ArtJobs Global Network",
+    location: "Finland | Online",
+    date: "Current",
+    status: "current" as const,
     description:
-      "Solo exhibition featuring AI-enhanced landscape studies inspired by classical European painting traditions.",
+      "Actively participating in international juried open calls and artistic selection processes, focusing on projects that bridge AI technology with contemporary humanitarian themes",
   },
 ];
 
