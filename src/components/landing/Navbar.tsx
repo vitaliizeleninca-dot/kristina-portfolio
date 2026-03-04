@@ -21,8 +21,18 @@ export function Navbar({ animationDelay = 0 }: NavbarProps) {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
+
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsMobileMenuOpen(false);
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("keydown", handleEsc);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("keydown", handleEsc);
+    };
   }, []);
 
   return (
@@ -37,12 +47,20 @@ export function Navbar({ animationDelay = 0 }: NavbarProps) {
       style={{ animationDelay: `${animationDelay}ms` }}
     >
       {/* Logo */}
-      <div className="flex items-center gap-4 opacity-0 animate-fade-in-up ml-4 lg:ml-8" style={{ animationDelay: `${animationDelay}ms` }}>
-       
-        <img src="/Kristina logo.png" alt="Kristina ;D" className="w-20 h-20 object-cover rounded-full border-2 border-[#B4935B]" />
-        
+      <div
+        className="flex items-center gap-4 opacity-0 animate-fade-in-up ml-4 lg:ml-8"
+        style={{ animationDelay: `${animationDelay}ms` }}
+      >
+        <img
+          src="/Kristina logo.png"
+          alt="Kristina Logo"
+          className="w-20 h-20 object-cover rounded-full border-2 border-[#B4935B]"
+        />
         <div className="flex flex-col leading-tight">
-          <span className="font-cinzel font-bold text-[#B4935B] text-2xl lg:text-3xl tracking-wide" style={{ textShadow: '0 2px 8px rgba(180,147,91,0.3)' }}>
+          <span
+            className="font-cinzel font-bold text-[#B4935B] text-2xl lg:text-3xl tracking-wide"
+            style={{ textShadow: "0 2px 8px rgba(180,147,91,0.3)" }}
+          >
             Kristina ;D
           </span>
           <span className="font-cinzel font-medium text-[#8B7355] text-xs tracking-[0.2em] uppercase italic -mt-0.5">
@@ -70,29 +88,40 @@ export function Navbar({ animationDelay = 0 }: NavbarProps) {
         ))}
       </div>
 
-      {/* Desktop Auth Buttons */}
+      {/* Desktop Social Links */}
       <div
         className="hidden lg:flex items-center gap-4 opacity-0 animate-fade-in-up"
         style={{ animationDelay: `${animationDelay + 300}ms` }}
       >
-        <button className="font-montserrat font-medium text-sm text-[#0A1A33] hover:text-[#B4935B] transition-colors">
-          Login
-        </button>
-        <button
+        <a
+          href="https://x.com/aurumross"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-montserrat font-medium text-sm text-[#0A1A33] hover:text-[#B4935B] transition-colors"
+        >
+          X (Twitter)
+        </a>
+
+        <a
+          href="https://webbiesocial.com/dashboard/aurumross"
+          target="_blank"
+          rel="noopener noreferrer"
           className={cn(
-            "px-6 py-2.5 font-montserrat font-semibold text-sm text-[#0A1A33] rounded-full",
+            "px-6 py-2.5 font-montserrat font-semibold text-sm text-[#0A1A33] rounded-full flex items-center justify-center",
             "bg-gradient-to-r from-[#D4AF37] via-[#B4935B] to-[#D4AF37]",
             "shadow-[0_2px_20px_rgba(180,147,91,0.4)]",
             "hover:shadow-[0_4px_30px_rgba(180,147,91,0.6)] hover:scale-105",
             "transition-all duration-200 ease-out"
           )}
         >
-          Get Started
-        </button>
+          Webbie Social
+        </a>
       </div>
 
       {/* Mobile Menu Button */}
       <button
+        aria-label="Toggle menu"
+        aria-expanded={isMobileMenuOpen}
         className="lg:hidden p-2 text-[#0A1A33]"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
       >
@@ -101,7 +130,7 @@ export function Navbar({ animationDelay = 0 }: NavbarProps) {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-20 left-0 right-0 bg-[#F9F7F2]/95 backdrop-blur-lg border-b border-[#DBCBAA]/30 p-6">
+        <div className="lg:hidden absolute top-20 left-0 right-0 bg-[#F9F7F2]/95 backdrop-blur-lg border-b border-[#DBCBAA]/30 p-6 shadow-xl">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
@@ -113,19 +142,29 @@ export function Navbar({ animationDelay = 0 }: NavbarProps) {
                 {link.label}
               </a>
             ))}
+
             <div className="flex flex-col gap-3 pt-4 border-t border-[#DBCBAA]/30">
-              <button className="font-montserrat font-medium text-[#0A1A33] hover:text-[#B4935B] transition-colors py-2 text-left">
-                <a href="https://webbiesocial.com/dashboard/aurumross" target="_blank">Webbie Social</a>
-              </button>
-              <button
+              <a
+                href="https://x.com/aurumross"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-montserrat font-medium text-[#0A1A33] hover:text-[#B4935B] transition-colors py-2 text-left"
+              >
+                X (Twitter)
+              </a>
+
+              <a
+                href="https://webbiesocial.com/dashboard/aurumross"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(
-                  "w-full px-6 py-3 font-montserrat font-semibold text-sm text-[#0A1A33] rounded-full",
+                  "w-full px-6 py-3 font-montserrat font-semibold text-sm text-[#0A1A33] rounded-full text-center",
                   "bg-gradient-to-r from-[#D4AF37] via-[#B4935B] to-[#D4AF37]",
                   "shadow-[0_2px_20px_rgba(180,147,91,0.4)]"
                 )}
               >
-                <a href="https://x.com/aurumross" target="_blank">X (Twitter)</a>
-              </button>
+                Webbie Social
+              </a>
             </div>
           </div>
         </div>
