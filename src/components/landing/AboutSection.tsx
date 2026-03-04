@@ -43,9 +43,9 @@ export function AboutSection() {
             {/* Stats */}
             <div className="mt-10 flex gap-10">
               {[
-                { value: "15+", label: "Exhibitions" },
-                { value: "200+", label: "Artworks" },
-                { value: "8", label: "Countries" },
+                { value: "1", label: "Exhibitions" },
+                { value: "15+", label: "Artworks" },
+                { value: "", label: "Countries" },
               ].map((item) => (
                 <div key={item.label} className="text-center lg:text-left">
                   <p className="font-playfair font-bold text-3xl text-[#B4935B]">
@@ -87,8 +87,8 @@ export function AboutSection() {
               )}
             >
               <img
-                src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&q=80"
-                alt="Portrait of Kristina, digital artist working with AI and memory"
+                src="Kristina avatar.png"
+                alt="Kristina ;D Digital Artist"
                 className="w-full h-full object-cover"
               />
 
