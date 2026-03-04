@@ -46,7 +46,7 @@ export function Navbar({ animationDelay = 0 }: NavbarProps) {
             Kristina ;D
           </span>
           <span className="font-cinzel font-medium text-[#8B7355] text-xs tracking-[0.2em] uppercase italic -mt-0.5">
-            AI Artist
+            Digital Artist
           </span>
         </div>
       </div>
