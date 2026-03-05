@@ -1,50 +1,82 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 export function AnimatedLogo() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   const orbitColors = [
-    "#FF0000", "#FF7F00", "#FFFF00", "#00FF00", "#0000FF", "#4B0082", "#9400D3",
+    "#FF0000",
+    "#FF7F00",
+    "#FFFF00",
+    "#00FF00",
+    "#0000FF",
+    "#4B0082",
+    "#9400D3",
   ];
 
-  // МИНИМАЛЬНАЯ ОРБИТА: 155px
-  // Это позволит шарикам кружиться вплотную к логотипу (w-72)
-  const orbitRadius = 155; 
+  const orbitRadius = 155;
+  const duration = 12;
+
+  // вставляем стили один раз
+  useEffect(() => {
+    const style = document.createElement("style");
+
+    style.innerHTML = `
+      @keyframes orbit3D_tight {
+        0% {
+          transform:
+            translate(-50%, -50%)
+            rotate(var(--start-angle))
+            translateX(${orbitRadius}px)
+            rotate(calc(-1 * var(--start-angle)))
+            scale(1);
+          z-index: 30;
+          opacity: 1;
+        }
+
+        50% {
+          transform:
+            translate(-50%, -50%)
+            rotate(calc(var(--start-angle) + 180deg))
+            translateX(${orbitRadius}px)
+            rotate(calc(-1 * (var(--start-angle) + 180deg)))
+            scale(0.7);
+          z-index: 0;
+          opacity: 0.15;
+        }
+
+        100% {
+          transform:
+            translate(-50%, -50%)
+            rotate(calc(var(--start-angle) + 360deg))
+            translateX(${orbitRadius}px)
+            rotate(calc(-1 * (var(--start-angle) + 360deg)))
+            scale(1);
+          z-index: 30;
+          opacity: 1;
+        }
+      }
+
+      @keyframes logoFloat {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+      }
+
+      .animate-logo-float {
+        animation: logoFloat 5s ease-in-out infinite;
+      }
+    `;
+
+    document.head.appendChild(style);
+
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
 
   return (
-    <div className="relative w-[450px] h-[450px] flex items-center justify-center">
+    <div className="relative w-[350px] md:w-[450px] h-[350px] md:h-[450px] flex items-center justify-center">
       
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes orbit3D_tight {
-          0% {
-            transform: rotate(var(--start-angle)) translateX(${orbitRadius}px) rotate(calc(-1 * var(--start-angle))) scale(1);
-            z-index: 30; 
-            opacity: 1;
-          }
-          50% {
-            transform: rotate(calc(var(--start-angle) + 180deg)) translateX(${orbitRadius}px) rotate(calc(-1 * (var(--start-angle) + 180deg))) scale(0.7);
-            z-index: 0; 
-            opacity: 0.2;
-          }
-          100% {
-            transform: rotate(calc(var(--start-angle) + 360deg)) translateX(${orbitRadius}px) rotate(calc(-1 * (var(--start-angle) + 360deg))) scale(1);
-            z-index: 30;
-            opacity: 1;
-          }
-        }
-
-        @keyframes floatLogoSimple {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
-        }
-      `}} />
-
-      {/* Центральная эмблема */}
-      <div className="relative z-10 animate-[floatLogoSimple_5s_easeInOut_infinite]">
+      {/* Центральный логотип */}
+      <div className="relative z-10 animate-logo-float">
         <img
           src="/logo-final.png"
           alt="Kristina Logo"
@@ -52,30 +84,30 @@ export function AnimatedLogo() {
         />
       </div>
 
-      {/* Орбитальные шарики (уменьшены до w-5 h-5 для аккуратности) */}
-      {mounted &&
-        orbitColors.map((color, index) => {
-          const startAngle = (index / orbitColors.length) * 360;
+      {/* Орбитальные шарики */}
+      {orbitColors.map((color, index) => {
+        const startAngle = (index / orbitColors.length) * 360;
 
-          return (
-            <div
-              key={index}
-              className="absolute w-5 h-5 rounded-full"
-              style={{
+        return (
+          <div
+            key={index}
+            className="absolute w-5 h-5 rounded-full"
+            style={
+              {
                 background: `radial-gradient(circle at 30% 30%, white 0%, ${color} 60%, ${color}dd 100%)`,
                 boxShadow: `0 0 15px ${color}aa`,
                 top: "50%",
                 left: "50%",
-                marginTop: "-0.625rem", // центрирование w-5
-                marginLeft: "-0.625rem",
-                //@ts-ignore
+                transform: "translate(-50%, -50%)",
                 "--start-angle": `${startAngle}deg`,
-                animation: `orbit3D_tight 10s linear infinite`, // чуть быстрее для динамики
-                animationDelay: `${-index * (10 / orbitColors.length)}s`,
-              }}
-            />
-          );
-        })}
+                animation: `orbit3D_tight ${duration}s linear infinite`,
+                animationDelay: `${-index * (duration / orbitColors.length)}s`,
+                willChange: "transform",
+              } as React.CSSProperties
+            }
+          />
+        );
+      })}
     </div>
   );
 }
