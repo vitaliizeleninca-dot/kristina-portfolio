@@ -4,37 +4,37 @@ const artworks = [
   {
     title: "Bird of Childhood",
     medium: "Homage to Brâncuși for HOMAGE Open Call",
-    image: "https://images.unsplash.com/photo-1634017839464-5c339afa0df4?w=600&q=80",
+    image: "/artworks/Bird of Childhood.png",
     link: "https://x.com/aurumross/status/2028732903517995355?s=20",
   },
   {
     title: "Childhood Dreams",
     medium: "Created for MOONLIGHT Open Call",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80",
+    image: "/artworks/Childhood Dreams.png",
     link: "https://x.com/aurumross/status/2027639745216430167?s=20",
   },
   {
     title: "The Renaissance Shimmering Childhood",
     medium: "Official Teaser",
-    image: "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=600&q=80",
+    image: "/artworks/The Essence of Shimmering.png",
     link: "https://x.com/aurumross/status/2028732903517995355?s=20",
   },
   {
     title: "Breaking Through Concrete",
     medium: "Hope Open Call by 34 Gallery",
-    image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&q=80",
+    image: "/artworks/Breaking Through Concrete.png",
     link: "https://x.com/aurumross/status/2024958419753730494?s=20",
   },
   {
     title: "Digital Skies Over the Ruins",
     medium: "Make Art Not War - Webbie Social",
-    image: "https://images.unsplash.com/photo-1549490349-8643362247b5?w=600&q=80",
+    image: "/artworks/Digital Skies Over the Ruins.png",
     link: "https://x.com/aurumross/status/2024520684106404339?s=20",
   },
   {
     title: "The Heirloom Scroll",
     medium: "Collection on Objkt (Tezos)",
-    image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600&q=80",
+    image: "/artworks/The Heirloom Scroll.png",
     link: "https://objkt.com/users/tz1PFHusm1gxNEVSpNu3wMJwo52FUUjqMb9J",
   },
 ];
