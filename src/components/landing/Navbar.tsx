@@ -17,6 +17,12 @@ export function Navbar({ animationDelay = 0 }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Функция для возврата наверх
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setIsMobileMenuOpen(false); // Закрываем меню на мобилках при клике
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -46,19 +52,20 @@ export function Navbar({ animationDelay = 0 }: NavbarProps) {
       )}
       style={{ animationDelay: `${animationDelay}ms` }}
     >
-      {/* Logo */}
-      <div
-        className="flex items-center gap-4 opacity-0 animate-fade-in-up ml-4 lg:ml-8"
+      {/* Logo - Теперь это кнопка возврата наверх */}
+      <button
+        onClick={scrollToTop}
+        className="flex items-center gap-4 opacity-0 animate-fade-in-up ml-4 lg:ml-8 group cursor-pointer border-none bg-transparent outline-none"
         style={{ animationDelay: `${animationDelay}ms` }}
       >
         <img
           src="/Kristina logo.png"
           alt="Kristina Logo"
-          className="w-20 h-20 object-cover rounded-full border-2 border-[#B4935B]"
+          className="w-20 h-20 object-cover rounded-full border-2 border-[#B4935B] transition-transform duration-300 group-hover:scale-105"
         />
-        <div className="flex flex-col leading-tight">
+        <div className="flex flex-col items-start leading-tight">
           <span
-            className="font-cinzel font-bold text-[#B4935B] text-2xl lg:text-3xl tracking-wide"
+            className="font-cinzel font-bold text-[#B4935B] text-2xl lg:text-3xl tracking-wide transition-colors group-hover:text-[#8B7355]"
             style={{ textShadow: "0 2px 8px rgba(180,147,91,0.3)" }}
           >
             Kristina ;D
@@ -67,7 +74,7 @@ export function Navbar({ animationDelay = 0 }: NavbarProps) {
             Digital Artist
           </span>
         </div>
-      </div>
+      </button>
 
       {/* Desktop Navigation */}
       <div className="hidden lg:flex items-center gap-1 bg-[#0A1A33]/90 backdrop-blur-sm rounded-full px-2 py-1.5">
