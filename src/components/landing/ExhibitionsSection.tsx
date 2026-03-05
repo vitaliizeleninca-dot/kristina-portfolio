@@ -8,6 +8,7 @@ const exhibitions = [
     location: "Finland | Online",
     date: "March 2026",
     status: "current" as const,
+    link: "https://webbiesocial.com/dashboard/aurumross",
     description:
       "Recognized for 17+ digital works showcasing a vibrant platform for artistic research and experimentation in contemporary AI-driven practices",
   },
@@ -17,6 +18,7 @@ const exhibitions = [
     location: "Finland | Online",
     date: "In Development",
     status: "current" as const,
+    link: "https://childhood-in-art-charity-pl-373.created.app",
     description:
       "An upcoming collaborative platform and research project dedicated to the intersection of contemporary art and the phenomenon of childhood",
   },
@@ -26,6 +28,7 @@ const exhibitions = [
     location: "Finland | Online",
     date: "Current",
     status: "current" as const,
+    link: "https://www.artjobs.com/",
     description:
       "Actively participating in international juried open calls and artistic selection processes, focusing on projects that bridge AI technology with contemporary humanitarian themes",
   },
@@ -33,7 +36,10 @@ const exhibitions = [
 
 export function ExhibitionsSection() {
   return (
-    <section id="exhibitions" className="relative py-24 px-6 md:px-10 lg:px-16 bg-[#0A1A33]/[0.03]">
+    <section
+      id="exhibitions"
+      className="relative py-24 px-6 md:px-10 lg:px-16 bg-[#0A1A33]/[0.03]"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -94,12 +100,19 @@ export function ExhibitionsSection() {
 
               {/* Right - Content */}
               <div className="flex-1">
-                <h3 className="font-playfair font-bold text-xl text-[#0A1A33]">
+                <a
+                  href={exhibition.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-playfair font-bold text-xl text-[#0A1A33] hover:text-[#B4935B] transition-colors"
+                >
                   {exhibition.title}
-                </h3>
+                </a>
+
                 <p className="mt-1 font-montserrat text-sm text-[#B4935B]/80 font-medium">
                   {exhibition.venue}
                 </p>
+
                 <p className="mt-3 font-montserrat text-sm text-[#1A1A1A]/60 leading-relaxed max-w-2xl">
                   {exhibition.description}
                 </p>
