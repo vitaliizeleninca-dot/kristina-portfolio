@@ -2,34 +2,40 @@ import { cn } from "@/lib/utils";
 
 const artworks = [
   {
-    title: "Ethereal Genesis",
-    medium: "AI + Digital Painting",
+    title: "Bird of Childhood",
+    medium: "Homage to Brâncuși for HOMAGE Open Call",
     image: "https://images.unsplash.com/photo-1634017839464-5c339afa0df4?w=600&q=80",
+    link: "https://x.com/aurumross/status/2028732903517995355?s=20",
   },
   {
-    title: "Neural Bloom",
-    medium: "Generative Algorithm",
+    title: "Childhood Dreams",
+    medium: "Created for MOONLIGHT Open Call",
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80",
+    link: "https://x.com/aurumross/status/2027639745216430167?s=20",
   },
   {
-    title: "Fragments of Memory",
-    medium: "AI + Mixed Media",
+    title: "The Renaissance Shimmering Childhood",
+    medium: "Official Teaser",
     image: "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=600&q=80",
+    link: "https://x.com/aurumross/status/2028732903517995355?s=20",
   },
   {
-    title: "Digital Reverie",
-    medium: "Latent Diffusion",
+    title: "Breaking Through Concrete",
+    medium: "Hope Open Call by 34 Gallery",
     image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&q=80",
+    link: "https://x.com/aurumross/status/2024958419753730494?s=20",
   },
   {
-    title: "Chromatic Pulse",
-    medium: "AI + Photography",
+    title: "Digital Skies Over the Ruins",
+    medium: "Make Art Not War - Webbie Social",
     image: "https://images.unsplash.com/photo-1549490349-8643362247b5?w=600&q=80",
+    link: "https://x.com/aurumross/status/2024520684106404339?s=20",
   },
   {
-    title: "Abstract Horizon",
-    medium: "Generative Art",
+    title: "The Heirloom Scroll",
+    medium: "Collection on Objkt (Tezos)",
     image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600&q=80",
+    link: "https://objkt.com/users/tz1PFHusm1gxNEVSpNu3wMJwo52FUUjqMb9J",
   },
 ];
 
@@ -57,10 +63,13 @@ export function GalleryGrid() {
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {artworks.map((artwork, index) => (
-            <div
+            <a
               key={artwork.title}
+              href={artwork.link}
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
-                "group relative rounded-2xl overflow-hidden cursor-pointer",
+                "group relative rounded-2xl overflow-hidden cursor-pointer block",
                 "bg-[#F9F7F2] border border-[#DBCBAA]/30",
                 "shadow-[0_4px_20px_rgba(180,147,91,0.08)]",
                 "hover:shadow-[0_8px_40px_rgba(180,147,91,0.2)]",
@@ -102,7 +111,7 @@ export function GalleryGrid() {
                   {artwork.medium}
                 </p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
