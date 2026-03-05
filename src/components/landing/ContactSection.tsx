@@ -8,7 +8,7 @@ const contacts = [
     value: "hello@khrystyna.art",
     href: "mailto:hello@khrystyna.art",
     external: false,
-    hidden: true, // Email скрыт
+    hidden: true, // EMAIL СКРЫТ
   },
   {
     icon: Instagram,
@@ -32,6 +32,8 @@ const contacts = [
 ];
 
 export function ContactSection() {
+  const visibleContacts = contacts.filter((contact) => !contact.hidden);
+
   return (
     <section id="contact" className="relative py-24 px-6 md:px-10 lg:px-16">
       <div className="max-w-4xl mx-auto text-center">
@@ -50,28 +52,25 @@ export function ContactSection() {
 
         <p className="mt-4 font-montserrat text-base text-[#1A1A1A]/60 max-w-2xl mx-auto leading-relaxed">
           If you are interested in collaborations, commissions, or exhibition
-          inquiries, I'd love to hear from you.
+          inquiries, I'd love to hear from you
         </p>
 
         {/* Contact Cards */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {contacts.map((contact, index) => {
+        <div className="mt-12 flex flex-wrap justify-center gap-6">
+          {visibleContacts.map((contact, index) => {
             const Icon = contact.icon;
 
             return (
               <div
                 key={contact.title}
                 className={cn(
-                  contact.hidden ? "hidden" : "flex",
-                  "group flex-col items-center gap-3 p-8 rounded-2xl",
+                  "flex flex-col items-center text-center gap-3 p-8 rounded-2xl w-full max-w-[280px]",
 
-                  // glass
+                  // glass effect
                   "bg-[#F9F7F2]/70 backdrop-blur-md",
-
-                  // border
                   "border border-[#DBCBAA]/30",
 
-                  // shadow
+                  // shadows
                   "shadow-[0_4px_20px_rgba(180,147,91,0.08)]",
 
                   // hover
@@ -88,17 +87,14 @@ export function ContactSection() {
                   animationDelay: `${index * 120}ms`,
                 }}
               >
-                {/* Icon */}
                 <div className="w-12 h-12 rounded-full bg-[#0A1A33]/5 flex items-center justify-center">
                   <Icon className="w-5 h-5 text-[#B4935B]" />
                 </div>
 
-                {/* Title */}
                 <h3 className="font-montserrat font-semibold text-sm text-[#0A1A33]">
                   {contact.title}
                 </h3>
 
-                {/* Value */}
                 {contact.href ? (
                   <a
                     href={contact.href}
@@ -122,7 +118,8 @@ export function ContactSection() {
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-[#DBCBAA]/30">
           <p className="font-montserrat text-xs text-[#8B7355]/60 tracking-wide">
-            © 2026 Kristina ;D | Digital Artist — AURUM Project. All rights reserved
+            © 2026 Kristina ;D | Digital Artist — AURUM Project. All rights
+            reserved
           </p>
         </div>
 
