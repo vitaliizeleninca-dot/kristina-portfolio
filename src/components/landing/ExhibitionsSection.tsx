@@ -46,10 +46,7 @@ export function ExhibitionsSection() {
           <span className="font-montserrat text-xs font-semibold tracking-[0.3em] uppercase text-[#B4935B]">
             Shows & Events
           </span>
-          <h2
-            className="mt-4 font-playfair font-bold text-3xl md:text-4xl lg:text-5xl text-[#0A1A33] leading-tight"
-            style={{ textShadow: "0 1px 4px rgba(180,147,91,0.15)" }}
-          >
+          <h2 className="mt-4 font-playfair font-bold text-3xl md:text-4xl lg:text-5xl text-[#0A1A33] leading-tight">
             Exhibitions
           </h2>
         </div>
@@ -100,18 +97,18 @@ export function ExhibitionsSection() {
 
               {/* Right - Content */}
               <div className="flex-1">
+                <h3 className="font-playfair font-bold text-xl text-[#0A1A33]">
+                  {exhibition.title}
+                </h3>
+
                 <a
                   href={exhibition.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-playfair font-bold text-xl text-[#0A1A33] hover:text-[#B4935B] transition-colors"
+                  className="mt-1 inline-block font-montserrat text-sm text-[#B4935B]/80 font-medium hover:text-[#B4935B] transition-colors"
                 >
-                  {exhibition.title}
-                </a>
-
-                <p className="mt-1 font-montserrat text-sm text-[#B4935B]/80 font-medium">
                   {exhibition.venue}
-                </p>
+                </a>
 
                 <p className="mt-3 font-montserrat text-sm text-[#1A1A1A]/60 leading-relaxed max-w-2xl">
                   {exhibition.description}
