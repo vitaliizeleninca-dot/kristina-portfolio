@@ -8,7 +8,7 @@ const contacts = [
     value: "hello@khrystyna.art",
     href: "mailto:hello@khrystyna.art",
     external: false,
-    hidden: true, // ← EMAIL СКРЫТ
+    hidden: true, // Email скрыт
   },
   {
     icon: Instagram,
@@ -35,6 +35,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="relative py-24 px-6 md:px-10 lg:px-16">
       <div className="max-w-4xl mx-auto text-center">
+
         {/* Header */}
         <span className="font-montserrat text-xs font-semibold tracking-[0.3em] uppercase text-[#B4935B]">
           Get in Touch
@@ -62,16 +63,18 @@ export function ContactSection() {
                 key={contact.title}
                 className={cn(
                   contact.hidden ? "hidden" : "flex",
-                  "flex-col items-center gap-3 p-8 rounded-2xl",
+                  "group flex-col items-center gap-3 p-8 rounded-2xl",
 
-                  // glass effect
+                  // glass
                   "bg-[#F9F7F2]/70 backdrop-blur-md",
+
+                  // border
                   "border border-[#DBCBAA]/30",
 
-                  // shadows
+                  // shadow
                   "shadow-[0_4px_20px_rgba(180,147,91,0.08)]",
 
-                  // hover effects
+                  // hover
                   "hover:shadow-[0_12px_60px_rgba(180,147,91,0.18)]",
                   "hover:border-[#D4AF37]/50",
                   "hover:-translate-y-1 hover:scale-[1.04]",
@@ -85,14 +88,17 @@ export function ContactSection() {
                   animationDelay: `${index * 120}ms`,
                 }}
               >
+                {/* Icon */}
                 <div className="w-12 h-12 rounded-full bg-[#0A1A33]/5 flex items-center justify-center">
                   <Icon className="w-5 h-5 text-[#B4935B]" />
                 </div>
 
+                {/* Title */}
                 <h3 className="font-montserrat font-semibold text-sm text-[#0A1A33]">
                   {contact.title}
                 </h3>
 
+                {/* Value */}
                 {contact.href ? (
                   <a
                     href={contact.href}
@@ -116,10 +122,10 @@ export function ContactSection() {
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-[#DBCBAA]/30">
           <p className="font-montserrat text-xs text-[#8B7355]/60 tracking-wide">
-            © 2026 Kristina ;D | Digital Artist — AURUM Project. All rights
-            reserved
+            © 2026 Kristina ;D | Digital Artist — AURUM Project. All rights reserved
           </p>
         </div>
+
       </div>
     </section>
   );
