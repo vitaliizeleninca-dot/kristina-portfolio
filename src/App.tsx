@@ -1,23 +1,39 @@
 import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
+
 import Home from "./components/home";
+import { GlowBackground } from "./components/ui/GlowBackground";
 
 function App() {
+
   return (
-    <Suspense fallback={<p>Loading...</p>}>
-      <>
+
+    <div className="relative min-h-screen w-full overflow-x-hidden">
+
+      {/* Animated premium background */}
+      <GlowBackground />
+
+      <Suspense
+        fallback={
+          <div className="flex items-center justify-center min-h-screen text-sm opacity-60">
+            Loading experience...
+          </div>
+        }
+      >
+
         <Routes>
+
           <Route
             path="/"
-            element={
-              <div className="relative min-h-screen w-full overflow-x-hidden">
-                <Home />
-              </div>
-            }
+            element={<Home />}
           />
+
         </Routes>
-      </>
-    </Suspense>
+
+      </Suspense>
+
+    </div>
+
   );
 }
 
