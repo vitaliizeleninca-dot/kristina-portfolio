@@ -30,9 +30,7 @@ export function HeroSection() {
               className="mt-6 animate-fade-in-up font-montserrat text-lg font-bold leading-snug text-[#222] opacity-0 md:text-xl lg:text-[22px]"
               style={{ animationDelay: "300ms" }}
             >
-              A journey into the world of warm memories and
-              <br className="hidden md:block" />
-              sincere dreams through the lens of modern art.
+              A journey into the world of warm memories and sincere dreams through the lens of modern art
             </p>
 
             <p
@@ -40,7 +38,7 @@ export function HeroSection() {
               style={{ animationDelay: "400ms" }}
             >
               A special collection for Webbie Social. Exploring how technology
-              helps us see the world through the eyes of a child again.
+              helps us see the world through the eyes of a child again
             </p>
 
             {/* CTA */}
@@ -57,17 +55,22 @@ export function HeroSection() {
               </SecondaryButton>
             </div>
 
-            {/* Badge */}
+            {/* Interactive Badge (Link to Webbie Social) */}
             <div
               className="mt-12 flex items-center gap-3 animate-fade-in-up opacity-0"
               style={{ animationDelay: "600ms" }}
             >
-              <div className="flex items-center gap-2 rounded-full border border-[#DBCBAA]/40 bg-[#0A1A33]/5 px-4 py-2">
+              <a 
+                href="https://webbiesocial.com/dashboard/aurumross" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 rounded-full border border-[#DBCBAA]/40 bg-[#0A1A33]/5 px-4 py-2 transition-all duration-300 hover:bg-[#B4935B]/10 hover:border-[#B4935B]/60 hover:scale-105 active:scale-95"
+              >
                 <div className="h-2 w-2 animate-pulse rounded-full bg-[#D4AF37]" />
-                <span className="font-montserrat text-xs font-medium uppercase tracking-wide text-[#0A1A33]/70">
+                <span className="font-montserrat text-xs font-medium uppercase tracking-wide text-[#0A1A33]/70 group-hover:text-[#B4935B]">
                   Webbie Social — Featured Artist
                 </span>
-              </div>
+              </a>
             </div>
           </div>
 
@@ -76,6 +79,7 @@ export function HeroSection() {
             className="flex w-full flex-1 items-center justify-center opacity-0 animate-fade-in-up lg:justify-end lg:pl-12"
             style={{ animationDelay: "600ms" }}
           >
+            {/* Масштаб увеличен до 1.75 для выразительности эмблемы */}
             <div className="relative scale-125 transition-transform duration-500 md:scale-150 lg:scale-[1.75]">
               <AnimatedLogo />
             </div>
