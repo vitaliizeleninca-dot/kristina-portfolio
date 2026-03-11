@@ -3,6 +3,16 @@ import { Calendar, MapPin } from "lucide-react";
 
 const exhibitions = [
   {
+    title: "Selected Artist: HOPE Open Call",
+    venue: "34 Gallery",
+    location: "International | Online",
+    date: "March 2026",
+    status: "current" as const,
+    link: "https://34gallery.org/open-calls",
+    description:
+      "Selected for the global HOPE curation by The 34 Gallery. Recognition for creative contribution to UN SDG 3.4 (Mental Health & Well-being) through digital arts advocacy. Featured showcase highlighting art as a tool for resilience and societal healing",
+  },
+  {
     title: "Digital Showcase",
     venue: "Webbie Social: Creator Spotlight",
     location: "Finland | Online",
@@ -21,17 +31,7 @@ const exhibitions = [
     link: "https://childhood-in-art-charity-pl-373.created.app",
     description:
       "An upcoming collaborative platform and research project dedicated to the intersection of contemporary art and the phenomenon of childhood",
-  },
-  {
-    title: "International Open Calls",
-    venue: "ArtJobs Global Network",
-    location: "Finland | Online",
-    date: "Current",
-    status: "current" as const,
-    link: "https://www.artjobs.com/",
-    description:
-      "Actively participating in international juried open calls and artistic selection processes, focusing on projects that bridge AI technology with contemporary humanitarian themes",
-  },
+  },  
 ];
 
 export function ExhibitionsSection() {
