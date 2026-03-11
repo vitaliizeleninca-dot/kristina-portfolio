@@ -2,18 +2,18 @@ import { cn } from "@/lib/utils";
 
 const artworks = [
   {
+    title: "Captain of the Paper Fleet",
+    medium: "Selected through "Hope" Open Call by 34 Gallery",
+    image: "/artworks/Captain of the Paper Fleet.png",
+    link: "https://x.com/aurumross/status/2031835974758518840?s=20",
+  },
+  {
     title: "Bird of Childhood",
     medium: "Homage to Brâncuși for HOMAGE Open Call",
     image: "/artworks/Bird of Childhood.png",
     link: "https://x.com/aurumross/status/2028732903517995355?s=20",
   },
-  {
-    title: "Childhood Dreams",
-    medium: "Created for MOONLIGHT Open Call",
-    image: "/artworks/Childhood Dreams.png",
-    link: "https://x.com/aurumross/status/2027639745216430167?s=20",
-  },
-  {
+    {
     title: "The Renaissance Shimmering Childhood",
     medium: "Official Teaser",
     image: "/artworks/The Essence of Shimmering.png",
