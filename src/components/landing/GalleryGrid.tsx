@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 const artworks = [
   {
     title: "Captain of the Paper Fleet",
-    medium: "Selected through "Hope" Open Call by 34 Gallery",
+    medium: "Selected through HOPE Open Call by 34 Gallery",
     image: "/artworks/Captain of the Paper Fleet.png",
     link: "https://x.com/aurumross/status/2031835974758518840?s=20",
   },
