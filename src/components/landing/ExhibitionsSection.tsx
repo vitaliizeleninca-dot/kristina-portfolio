@@ -7,9 +7,9 @@ const exhibitions = [
     venue: "Colorier L'Avenir & ICAN (2017 Nobel Peace Prize Laureate)",
     location: "Geneva | Switzerland",
     date: "May 2026",
-    status: "current" as const,
-    link: "https://34gallery.org/open-calls",
-    certificateLink: "/PROMEMORIA.jpg", // Точный путь к сертификату Женевы
+    status: "past" as const, // Изменено на завершенный статус
+    link: "/PROMEMORIA.jpg",  // Прямая ссылка на файл сертификата
+    certificateLink: "/PROMEMORIA.jpg",
     description: "Selected for the international group exhibition \"War, something that should never be done,\" held in Geneva. Featured works: \"Digital Sky Over the Ruins\" and \"Afghanistan & Pakistan: Skies Without Borders.\""
   },
   {
@@ -17,9 +17,9 @@ const exhibitions = [
     venue: "34 Gallery",
     location: "International | Online",
     date: "March 2026",
-    status: "current" as const,
-    link: "https://34gallery.org/open-calls",
-    certificateLink: "/AurumRoss.jpg", // Точный путь к африканскому сертификату
+    status: "past" as const, // Изменено на завершенный статус
+    link: "/AurumRoss.jpg",   // Прямая ссылка на файл сертификата
+    certificateLink: "/AurumRoss.jpg",
     description: "Selected for the global HOPE curation by The 34 Gallery. Recognition for creative contribution to UN SDG 3.4 (Mental Health & Well-being) through digital arts advocacy. Featured showcase highlighting art as a tool for resilience and societal healing."
   },
   {
