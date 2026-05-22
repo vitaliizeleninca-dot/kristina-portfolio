@@ -9,8 +9,8 @@ const exhibitions = [
     date: "May 2026",
     status: "current" as const,
     link: "https://34gallery.org/open-calls",
-    description:
-      "Selected for the international group exhibition "War, something that should never be done," held in Geneva. Featured works: "Digital Sky Over the Ruins" and "Afghanistan & Pakistan: Skies Without Borders." Recognized for artistic excellence and a profound contribution to the values of peace, human dignity, and global solidarity. This project highlights the role of creative expression in reflecting on the consequences of conflict and building a world free from nuclear threat",
+    certificateLink: "/PROMEMORIA.jpg", // Точный путь к сертификату Женевы
+    description: "Selected for the international group exhibition \"War, something that should never be done,\" held in Geneva. Featured works: \"Digital Sky Over the Ruins\" and \"Afghanistan & Pakistan: Skies Without Borders.\""
   },
   {
     title: "Selected Artist: HOPE Open Call",
@@ -19,8 +19,8 @@ const exhibitions = [
     date: "March 2026",
     status: "current" as const,
     link: "https://34gallery.org/open-calls",
-    description:
-      "Selected for the global HOPE curation by The 34 Gallery. Recognition for creative contribution to UN SDG 3.4 (Mental Health & Well-being) through digital arts advocacy. Featured showcase highlighting art as a tool for resilience and societal healing",
+    certificateLink: "/AurumRoss.jpg", // Точный путь к африканскому сертификату
+    description: "Selected for the global HOPE curation by The 34 Gallery. Recognition for creative contribution to UN SDG 3.4 (Mental Health & Well-being) through digital arts advocacy. Featured showcase highlighting art as a tool for resilience and societal healing."
   },
   {
     title: "Digital Showcase",
