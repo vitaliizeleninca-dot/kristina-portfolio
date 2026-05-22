@@ -3,6 +3,16 @@ import { Calendar, MapPin } from "lucide-react";
 
 const exhibitions = [
   {
+    title: "PROMEMORIA: Sending out an SOS",
+    venue: "Colorier L'Avenir & ICAN (2017 Nobel Peace Prize Laureate)",
+    location: "Geneva | Switzerland",
+    date: "May 2026",
+    status: "current" as const,
+    link: "https://34gallery.org/open-calls",
+    description:
+      "Selected for the international group exhibition "War, something that should never be done," held in Geneva. Featured works: "Digital Sky Over the Ruins" and "Afghanistan & Pakistan: Skies Without Borders." Recognized for artistic excellence and a profound contribution to the values of peace, human dignity, and global solidarity. This project highlights the role of creative expression in reflecting on the consequences of conflict and building a world free from nuclear threat",
+  },
+  {
     title: "Selected Artist: HOPE Open Call",
     venue: "34 Gallery",
     location: "International | Online",
